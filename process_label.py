@@ -12,7 +12,7 @@ def process_data(source_dir, dist_dir):
                     lines = file_to_read.readline()
                     if not lines:
                         break
-                    _, label = [i for i in lines.split()]
+                    _, label = [i for i in lines.split()] #label的存放形式是数据名称+对应label，中间用空格隔开
                     if int(label) < 4:
                         temp_name = "meta_test_" + file_name
                         with open(os.path.join(dist_dir, temp_name), "a") as f:

@@ -39,7 +39,7 @@ def train_test_split(images_list, labels_list, test_size=0.2):
     X_train, X_val, y_train, y_val = [], [], [], []
     for i in range(len(images_class)):  ### 去掉[]
         length = int(len(images_class[i])*test_size)
-        
+        np.random.shuffle(images_class[i]) ###shuffling数据顺序
         x_val_path = images_class[i][0:length]
         x_train_path = images_class[i][length:]
         y_val_label = labels_class[i][0:length]

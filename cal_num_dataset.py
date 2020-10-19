@@ -21,6 +21,7 @@ def get_labels(data_path):
             labels_list.append(label)
     return labels_list
 
+#适用于labels从0开始的数据集，若从labels从1开始需修改cal_num()
 def cal_num(labels_list):
     classes = np.unique(labels_list) ###计算labels的种类数量
     class_total = [0 for i in classes]
